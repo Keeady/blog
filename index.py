@@ -51,3 +51,7 @@ def save_subscription(email, nickname):
         logging.error(e)
 
     return None
+
+
+if __name__ == '__main__':
+    app.run()
