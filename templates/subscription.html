@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="row">
+            <div class="column column-50 column-offset-25">
+                <h4>Subscribe to get notified of new shows</h4>
+
+                <form method="post" action="/subscribe">
+                    <label for="nickname">Nickname</label>
+                    <input type="text" name="nickname" id="nickname" title="Please enter a greeting name" max="25">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" title="Please enter a valid email" max="250" required>
+                    <label for="frequency">Frequency</label>
+                    <select name="frequency" id="frequency" required>
+                        <option value="">Select ...</option>
+                        <option value="daily">Daily</option>
+                    </select>
+                    <input type="submit" class="button-primary" value="Subscribe">
+                </form>
+            </div>
+        </div>
+{% endblock %}
