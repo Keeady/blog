@@ -1,6 +1,7 @@
 from flask import Flask, render_template, flash, redirect, url_for, request
-from .services import db_service, subscription_db_service
 import logging, psycopg2
+from db_service import DbService
+from subscription_db_service import SubscriptionDbService
 
 app = Flask(__name__, static_url_path='', static_folder='static')
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -37,9 +38,9 @@ def show_subscription_form():
 
 def save_subscription(email, nickname):
     try:
-        db = db_service.DbService()
+        db = DbService()
         db.db_connect()
-        sub_service = subscription_db_service.SubscriptionDbService()
+        sub_service = SubscriptionDbService()
         id = sub_service.save_subscription(db.get_cursor(), email, nickname, 1)
         db.commit()
         db.close()
@@ -51,7 +52,6 @@ def save_subscription(email, nickname):
         logging.error(e)
 
     return None
-
 
 if __name__ == '__main__':
     app.run()
