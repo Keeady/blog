@@ -1,2 +1,9 @@
 *.egg-info
 *pycache*
+*.pyc
+*.env
+.idea
+.python
+bin
+*env
+lib
