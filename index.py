@@ -60,5 +60,18 @@ def show_exercise_page(page):
     return render_template(page)
 
 
+@app.route('/opencv', methods=['GET'])
+def show_opencv():
+    return render_template('opencv.html')
+
+
+@app.route('/opencv/<page>', methods=['GET'])
+def show_opencv_page(page):
+    if page not in ['setup.html']:
+        return redirect(url_for('show_blog'))
+
+    return render_template(page)
+
+
 if __name__ == '__main__':
     app.run()
