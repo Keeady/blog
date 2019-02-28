@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="section-content">
+        <h4>Find the smallest difference (positive integer) between two arrays:</h4>
+        <p>
+            Example: smallest difference is 5 calculated from 8 and 3
+            <pre>
+                [12, 56, 3, 90, 67]
+                [45, 34, 98, 8]
+            </pre>
+        </p>
+        <p>Approach:</p>
+        <p>
+            Inputs are two arrays and output is the min difference between any pairs from the 2 arrays.
+            A naive approach is to find the difference by subtracting each element from the two arrays.
+        </p>
+        <p>
+            What do we know about the difference between two numbers?
+            The difference between two numbers is smallest the closer they are positioned. For instance, diff between 8 and 5
+            is smaller than diff between 90 and 8.
+            We start by sorting the two arrays.
+        </p>
+        <p>
+            How do we find the smallest difference between two sorted arrays? Let's think about how we merge two sorted arrays.
+            We compare each element from both arrays one by one then we increment our pointer from the smallest side.
+            Similarly here, we calculate the difference between two elements from each array then increment the smallest pointer.
+            Update the min diff as we go.
+        </p>
+        <p>
+            <a href="https://github.com/Keeady/daily-coding-challenge/blob/master/Array/smallest_difference.py" target="_blank">
+                <i class="fab fa-github-alt"></i> View code on github
+            </a>
+        </p>
+    </div>
+{% endblock %}

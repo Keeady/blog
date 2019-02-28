@@ -41,15 +41,23 @@ def show_blog():
 
 @app.route('/lessons/<page>', methods=['GET'])
 def show_page(page):
-    if page not in ['heap']:
+    if page not in ['heap.html']:
         return redirect(url_for('show_blog'))
 
-    return render_template(page + '.html')
+    return render_template(page)
 
 
 @app.route('/exercises', methods=['GET'])
 def show_exercises():
-    return redirect(url_for('show_blog'))
+    return render_template('exercise.html')
+
+
+@app.route('/exercises/<page>', methods=['GET'])
+def show_exercise_page(page):
+    if page not in ['find-smallest-difference.html']:
+        return redirect(url_for('show_blog'))
+
+    return render_template(page)
 
 
 if __name__ == '__main__':
