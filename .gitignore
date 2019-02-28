@@ -8,3 +8,4 @@ bin
 *env
 lib
 virtualenv.py
+include
