@@ -7,7 +7,7 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @app.route('/', methods=['GET'])
 def index():
-    return redirect(url_for('subscribe'))
+    return redirect(url_for('show_blog'))
 
 
 @app.route('/subscribe', methods=['GET', 'POST'])
@@ -32,6 +32,24 @@ def subscribe():
 @app.route('/thankyou', methods=['GET'])
 def thank_you():
     return render_template('thank_you.html')
+
+
+@app.route('/lessons', methods=['GET'])
+def show_blog():
+    return render_template('blog.html')
+
+
+@app.route('/lessons/<page>', methods=['GET'])
+def show_page(page):
+    if page not in ['heap']:
+        return redirect(url_for('show_blog'))
+
+    return render_template(page + '.html')
+
+
+@app.route('/exercises', methods=['GET'])
+def show_exercises():
+    return redirect(url_for('show_blog'))
 
 
 if __name__ == '__main__':
