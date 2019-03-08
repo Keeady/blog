@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="section-content">
+        <h4>Divide and Conquer By Example</h4>
+        <p>
+        <strong>Divide</strong>: Break down the problem into several smaller size sub-problems
+        <strong>Conquer</strong>: Solve the sub-problems recursively
+        <strong>Combine</strong>: combine the solutions from each sub-problems to create the final solution to the original problem
+        </p>
+
+        <h5>Merge Sort</h5>
+        <p>
+        Sorting an array of size N is our original problem. We know that sorting an array of size 1 or 2 is trivial. We can therefore
+        break the task of sorting an array of any length by sorting each portion of the array at a time and merge the sorted parts
+        together until we get a final sorted array
+        </p>
+        <p>
+        <strong>Divide</strong>: divide in half recursively until sorting each half is trivial. For instance, each half is of size
+        1 or 2
+        <strong>Conquer</strong>: Sort the portions
+        <strong>Combine</strong>: Merge the sorted portions
+        </p>
+
+        <h5>Skyline Problem</h5>
+
+    </div>
+{% endblock %}
